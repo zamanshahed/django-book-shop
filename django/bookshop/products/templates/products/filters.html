@@ -1,0 +1,16 @@
+{% extends 'products/app_base.html' %}
+
+{% block search_content %}
+<div class="jumbotron" style="margin-left: 5%; margin-right: 5%; background-color:  #aeb6bf ;">
+<h3 style="text-align: center; margin-top: -3%; margin-bottom: 2%;">Filter Books</h3>
+  <form method="get" style="text-align: center;">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul style="text-align: center;">
+  {% for book in filter.qs %}
+    <li><a href="{{ book.id }}" style="text-decoration: none; color: #0277bd; font-size: 14px;">{{ book.name }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pop UP 2</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> 
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="popupMain" style="display: none">
+      <div id="popup">
+          <h1 id ="newsHeading"> Subscribe to our Newsletter. </h1>
+          <input type="email" name="" id="emailId" placeholder="user@email.com"><br>
+          <button class="submitId"> Subscribe </button>
+          <button class="submitId"> No Thanks </button>
+      </div>
+      
+    </div>
+  </div>
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <script>
+
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#popupMain').css('display', 'block'); },5000);
+});
+
+$('.submitId').click(function(){
+	$('#popupMain').css('display', 'none');
+});
+ </script>
+
+</body>
+
+</html>

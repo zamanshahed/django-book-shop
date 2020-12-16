@@ -1,0 +1,35 @@
+{% extends "products/app_base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="jumbotron" style="background-color:  #d7dbdd ; margin-top: -6%;font-family: AbeeZee;">
+	<h1 style="text-align: center;font-family: AbeeZee; margin-bottom: 2%; font-weight: 500;">{{book_detail.name}}</h1>
+	<div class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:360px;height: 520px; margin-top: 1px; margin-bottom: 5%;">
+		<img style="margin-top: 3%;" src="{{book_detail.image_url}}">
+	</div>
+
+
+	<p style="font-weight: 600;font-size: 18px;">Book Name: {{book_detail.name}}</p>
+	<p style="font-weight: 600;font-size: 18px;">Author: {{book_detail.author_name}}</p>
+	<p style="font-weight: 600;font-size: 18px;">Price: ${{book_detail.price}}</p>
+	<p style="font-weight: 600;font-size: 18px;">Rating: {{book_detail.rating_point}}/5</p>
+	<p style="font-weight: 600;font-size: 18px;">Category: {{book_detail.category_name}}</p>
+	<h4 style="font-weight: 600; font-size: 18px;">Description:</h4>
+	<p style="font-size: 15px;text-align: justify; font-family: AbeeZee">{{book_detail.description}}</p>
+
+ {% if user.is_authenticated %}      
+      
+          <button id="one" class="btn btn-sm btn-outline-secondary" type="button">Add To Cart</button> 
+          <div>
+          	<label>Number of items total:</label><input style="width: 6%;" type="number" name="" value="1">
+          </div>
+      
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'products:user_login' %}">Login To buy this book!</a></li>
+      {% endif %}
+
+
+</div>
+
+{% endblock %}

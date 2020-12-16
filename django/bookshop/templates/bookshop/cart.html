@@ -1,0 +1,20 @@
+{% extends 'bookshop/base.html' %}
+{% block login %}
+<h1>CART DETAILS</h1>
+
+{{ cart.item_count }}
+{{ cart.total_price }}
+
+{% for item in cart.list_items %}
+<div>
+    {# Access the item's model instance using its "obj" attribute #}
+    {{ item.obj.name }}
+    <img src="{{ book.image_url }}">
+    {{ item.price }}
+    {{ item.quantity }}
+    {{ item.total }}
+</div>
+{% endfor %}
+
+
+{% endblock login %}

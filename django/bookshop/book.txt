@@ -1,0 +1,9 @@
+name
+author_name
+price
+stock
+rating_point
+description
+sell_count
+category_name
+image_url

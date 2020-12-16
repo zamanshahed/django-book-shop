@@ -1,0 +1,15 @@
+{% extends 'bookshop/base.html' %}
+{% block login %}
+<h1>Please Login</h1>
+	<form action="{% url 'products:user_login' %}" method="POST" >	
+		{% csrf_token %}
+		<label for="username">Username:</label>
+		<input type="" name="username" placeholder="Enter Username">
+		<label for="password">Password</label>
+		<input type="password" name="password" placeholder="Enter Password">
+		<input type="submit" name="" value="LOGIN">
+	</form>
+
+
+	<a class="nav-link" href="{% url 'products:register' %}">Need an account? Please Register, it's free!</a>
+{% endblock login %}
